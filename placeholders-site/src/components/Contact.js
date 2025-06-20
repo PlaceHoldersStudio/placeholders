@@ -6,14 +6,20 @@ const Contact = () => (
     <h2>Get in <span className="accent">Touch</span></h2>
     <div className="contact-container">
       <div className="contact-info">
-        <div className="contact-item">
+        {/* <div className="contact-item">
           <i className="contact-icon">✉️</i>
           <p>
             <a href="mailto:bartekk.gordon@gmail.com">
               bartekk.gordon@gmail.com
             </a>
           </p>
-        </div>
+        </div> */}
+        <a href="mailto:bartekk.gordon@gmail.com" className="contact-item-link">
+          <div className="contact-item">
+            <i className="contact-icon">✉️</i>
+            <p>bartekk.gordon@gmail.com</p>
+          </div>
+        </a>
         {/* <div className="contact-item">
           <i className="contact-icon">🎮</i>
           <p><a href="https://place-holders.itch.io/" target="_blank" rel="noreferrer">place-holders.itch.io</a></p>
