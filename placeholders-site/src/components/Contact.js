@@ -24,8 +24,8 @@ const Contact = () => (
         </div> */}
         <div className="contact-social">
           <a href="https://discord.gg/vxpVks5TYF" target="_blank" rel="noreferrer" className="social-link">Discord</a>
-          <a href="https://github.com/knotfun" target="_blank" rel="noreferrer" className="social-link">GitHub</a>
-          <a href="https://place-holders.itch.io/" target="_blank" rel="noreferrer" className="social-link">Itch.io</a>
+          {/* <a href="https://github.com/knotfun" target="_blank" rel="noreferrer" className="social-link">GitHub</a> */}
+          {/* <a href="https://place-holders.itch.io/" target="_blank" rel="noreferrer" className="social-link">Itch.io</a> */}
         </div>
       </div>
     </div>

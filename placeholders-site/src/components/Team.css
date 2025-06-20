@@ -21,7 +21,7 @@
 
 .team-member:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 15px var(--shadow-color-hover, rgba(0, 0, 0, 0.3));
   background-color: rgba(255, 87, 34, 0.1);
 }
 

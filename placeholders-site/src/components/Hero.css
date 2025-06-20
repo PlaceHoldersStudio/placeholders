@@ -50,12 +50,15 @@
 .btn-primary {
   background-color: var(--accent);
   color: white;
+  transition: all 0.3s ease;
   border: 2px solid var(--accent);
 }
 
 .btn-primary:hover {
-  background-color: transparent;
-  color: var(--accent);
+  background-color: var(--accent-hover);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--accent-box-shadow);
 }
 
 .btn-outline {
