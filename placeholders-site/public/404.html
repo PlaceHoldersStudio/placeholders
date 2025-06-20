@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | PlaceHolders Studio</title>
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon/LogoPlaceHolders32.ico">
-    
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="%PUBLIC_URL%/favicon/LogoPlaceHolders16.ico">
+    <link rel="icon" type="image/x-icon" sizes="24x24" href="%PUBLIC_URL%/favicon/LogoPlaceHolders24.ico">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="%PUBLIC_URL%/favicon/LogoPlaceHolders32.ico">
+    <link rel="icon" type="image/x-icon" sizes="64x64" href="%PUBLIC_URL%/favicon/LogoPlaceHolder64.ico">
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#ff5722" />
+    <!-- Dark Reader compatibility -->
+    <meta name="darkreader-lock" content="Already includes dark theme" />
+    <meta name="description" content="Web site created for PlaceHolders Studio and its projects" />
+
     <style>
         :root {
             --bg: #121212;
             --text: #ffffff;
             --accent: #ff5722;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', sans-serif;
             background-color: var(--bg);
@@ -28,183 +37,199 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
+            padding: 1rem;
             background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
         }
-        
+
         .container {
-            max-width: 600px;
+            max-width: 500px;
+            width: 100%;
             background: rgba(255, 255, 255, 0.05);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 12px;
             border: 2px solid var(--accent);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
         }
-        
+
         .error-code {
-            font-size: 6rem;
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: bold;
             color: var(--accent);
             margin-bottom: 1rem;
             text-shadow: 0 0 20px rgba(255, 87, 34, 0.5);
         }
-        
+
         .icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
+            font-size: clamp(2rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
             display: block;
             animation: float 3s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        
+
         h1 {
             color: var(--accent);
             margin-bottom: 1rem;
-            font-size: 2rem;
+            font-size: clamp(1.2rem, 4vw, 2rem);
         }
-        
+
         p {
             line-height: 1.6;
             margin-bottom: 1.5rem;
             opacity: 0.9;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
         }
-        
+
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             background-color: var(--accent);
             color: white;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
             transition: all 0.3s ease;
-            margin: 0.5rem;
-            font-size: 1rem;
+            margin: 0.25rem;
+            font-size: clamp(0.8rem, 2.5vw, 1rem);
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
-        
+
         .btn:hover {
             background-color: #ff7043;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
         }
-        
+
         .btn-secondary {
             background-color: transparent;
             border: 2px solid var(--accent);
             color: var(--accent);
         }
-        
+
         .btn-secondary:hover {
             background-color: var(--accent);
             color: white;
         }
-        
+
         .info-box {
             background: rgba(255, 87, 34, 0.1);
             border: 1px solid var(--accent);
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+            font-size: clamp(0.8rem, 2.5vw, 1rem);
         }
-        
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
         .back-link {
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
             opacity: 0.7;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
-        
+
         .back-link a {
             color: var(--accent);
             text-decoration: none;
         }
-        
+
         .back-link a:hover {
             text-decoration: underline;
         }
-        
-        @media (max-width: 480px) {
+
+        @media (min-width: 480px) {
             .container {
-                padding: 2rem 1rem;
-                margin: 1rem;
+                padding: 3rem;
             }
-            
-            .error-code {
-                font-size: 4rem;
+
+            .buttons-container {
+                flex-direction: row;
+                justify-content: center;
+                gap: 1rem;
             }
-            
-            .icon {
-                font-size: 3rem;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-            }
-            
+
             .btn {
-                display: block;
-                margin: 0.5rem 0;
-                width: 100%;
+                margin: 0;
             }
         }
     </style>
 </head>
+
 <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="container">
         <div class="error-code">404</div>
         <span class="icon">🎮</span>
         <h1>Page Not Found</h1>
-        <p>Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.</p>
-        
+        <p>Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong
+            URL.</p>
+
         <div class="info-box">
             <strong>🎯 Let's get you back on track!</strong><br>
             You can visit our homepage to explore our indie games and projects.
         </div>
-        
-        <div>
-            <a href="/" class="btn">Go to Homepage</a>
-            <a href="/#projects" class="btn btn-secondary">View Our Games</a>
+
+        <div class="buttons-container">
+            <a href="%PUBLIC_URL%" class="btn">Go to Homepage</a>
+            <a href="%PUBLIC_URL%/#projects" class="btn btn-secondary">View Our Games</a>
         </div>
-        
+
         <div class="back-link">
             <a href="javascript:history.back()">← Go Back</a>
         </div>
     </div>
 
     <script>
-        // Automatyczne przekierowanie do strony głównej po 10 sekundach
+        // Lepsze przekierowanie dla GitHub Pages
         let countdown = 10;
-        
+
         function updateCountdown() {
             const container = document.querySelector('.container');
             const existingCountdown = document.querySelector('.countdown');
-            
+
             if (existingCountdown) {
                 existingCountdown.remove();
             }
-            
+
             if (countdown > 0) {
                 const countdownEl = document.createElement('div');
                 countdownEl.className = 'countdown';
-                countdownEl.style.cssText = 'margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;';
+                countdownEl.style.cssText = 'margin-top: 1rem; opacity: 0.6; font-size: clamp(0.7rem, 2vw, 0.9rem);';
                 countdownEl.innerHTML = `Redirecting to homepage in ${countdown} seconds...`;
                 container.appendChild(countdownEl);
                 countdown--;
                 setTimeout(updateCountdown, 1000);
             } else {
-                window.location.href = '/';
+                // Względne przekierowanie
+                window.location.href = './index.html';
             }
         }
-        
-        // Rozpocznij countdown po 3 sekundach
+
+        // Rozpocznij countdown po 5 sekundach (dłużej na mobile)
         setTimeout(() => {
             updateCountdown();
-        }, 3000);
+        }, 5000);
     </script>
 </body>
+
 </html>
